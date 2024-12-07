@@ -1,0 +1,51 @@
+﻿@model List<Teacher>
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>
+                Teacher data
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="Create" asp-controller="Teacher" class="btn btn-primary">Create New Data  <i class="bi bi-plus-circle"></i></a>
+        </div>
+    </div>
+  
+<div class="col-10">
+    <table class="table table-striped table-bordered">
+    
+    <thead>
+        <tr>
+            
+                <th>Teacher's ID</th>
+                <i class="bi bi-plus-circle"></i>
+            
+      
+                <th>Teacher's Name</th>
+            
+        
+                <th>Teacher's salary</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                    <th>
+                        @obj.TeacherId
+                    </th>
+                    <th>
+                        @obj.Name
+                    </th>
+                    <th>
+                        @obj.Salary
+                    </th>
+
+            </tr>
+           
+        }
+        
+    </tbody>
+    </table>
+</div>
